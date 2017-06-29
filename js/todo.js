@@ -1,5 +1,11 @@
 $(document).ready(function(){
-  // call functions here
+  $("form").submit(submitForm)
 });
 
-// define functions here
+function submitForm(e) {
+  e.preventDefault()
+  let userInput = $("#item").val()
+  let listItem = `<li>${userInput}</li>`
+  $("#list ol").append(listItem)
+  $("#item").val('')
+}
